@@ -151,8 +151,9 @@ File: `app2.py`
 <img width="431" height="768" alt="Screenshot 2025-10-26 at 1 07 26 PM" src="https://github.com/user-attachments/assets/c49c0e11-ee30-4711-8b0a-601911ada684" />
 <img width="596" height="705" alt="Screenshot 2025-10-26 at 1 07 44 PM" src="https://github.com/user-attachments/assets/1a45929d-17ac-4b2e-bcab-c2962a34380f" />
 <img width="567" height="657" alt="Screenshot 2025-10-26 at 1 07 57 PM" src="https://github.com/user-attachments/assets/4dbeb537-23a8-41c7-82df-31d339e1c1e1" />
-
-
+<img width="595" height="658" alt="Screenshot 2025-10-26 at 1 08 03 PM" src="https://github.com/user-attachments/assets/7d827733-d8cc-40de-a3ad-0fb2c7384ef1" />
+<img width="621" height="684" alt="Screenshot 2025-10-26 at 1 08 11 PM" src="https://github.com/user-attachments/assets/723b91b1-f530-41fb-ad3e-f5c6928c6226" />
+<img width="675" height="674" alt="Screenshot 2025-10-26 at 1 08 15 PM" src="https://github.com/user-attachments/assets/09c4c0bc-1b4b-4ca5-8114-940c982f5149" />
 
 
 
