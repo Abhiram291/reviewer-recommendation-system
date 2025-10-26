@@ -1,4 +1,4 @@
-# Reviewer-recommendation-system
+<img width="431" height="768" alt="Screenshot 2025-10-26 at 1 07 26 PM" src="https://github.com/user-attachments/assets/b4c7c972-c9ba-4384-90e3-c45e5d0fdb22" /># Reviewer-recommendation-system
 A multi-method NLP-based system to recommend reviewers for research papers using BERT, Doc2Vec, Jaccard similarity, and Topic Modeling (NMF).”
 
 
@@ -147,19 +147,7 @@ File: `app2.py`
 
 
 ### Streamlit App Preview
-![Streamlit App](<img width="431" height="768" alt="Screenshot 2025-10-26 at 1 07 26 PM" src="https://github.com/user-attachments/assets/7ae47e99-6e3b-4786-9eda-2aad1de957f6" />
-)
-[Streamlit App](<img width="596" height="705" alt="Screenshot 2025-10-26 at 1 07 44 PM" src="https://github.com/user-attachments/assets/a49fbde0-4664-4b25-8596-d6479b4af6a2" />
-)
-[Streamlit App](<img width="567" height="657" alt="Screenshot 2025-10-26 at 1 07 57 PM" src="https://github.com/user-attachments/assets/98d35bcd-4f43-4ef0-96cc-757579ccb856" />
-)
-[Streamlit App](<img width="595" height="658" alt="Screenshot 2025-10-26 at 1 08 03 PM" src="https://github.com/user-attachments/assets/c5df81c7-8241-4fc4-ba8d-11cf3fe243f9" />
-)
-[Streamlit App](<img width="621" height="684" alt="Screenshot 2025-10-26 at 1 08 11 PM" src="https://github.com/user-attachments/assets/40cbd26a-b907-4717-ac7c-aad7a96a564b" />
-)
-![Streamlit App](<img width="675" height="674" alt="Screenshot 2025-10-26 at 1 08 15 PM" src="https://github.com/user-attachments/assets/0e157864-ba24-4395-a623-d1b673cd2a74" />
-)
-
+![Streamlit App]
 
 
 
