@@ -1,0 +1,26 @@
+python -m venv reviewer_env
+reviewer_env\Scripts\Activate.ps1
+
+
+# PDF parsing
+pip install PyMuPDF
+
+# NLP embeddings
+pip install sentence-transformers
+
+# Vector math & similarity
+pip install numpy scikit-learn
+
+# Optional for UI
+pip install streamlit
+
+
+pip install spacy
+python -m spacy download en_core_web_sm
+
+pip install gensim
+pip install scikit-learn gensim pyLDAvis
+
+pip install seaborn
+
+pip install streamlit
