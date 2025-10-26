@@ -27,3 +27,47 @@ Dataset/
 │ ├─ paper1.pdf
 │ └─ ...
 └─ ...
+
+
+## Running the Project
+
+The project consists of multiple Python scripts, each with a specific purpose. Follow the steps below to set up the system and generate reviewer recommendations.
+
+---
+
+### **1️⃣ Extract Author Texts from PDFs**
+File: `read_pdf.py`
+
+- **Purpose:** Reads all PDF papers in the dataset and extracts text for each author.  
+- **Output:** `author_profiles.json` – a JSON file containing concatenated text for each author.  
+
+##Run the file ###2
+
+
+
+### ** 2️⃣ Generate Author Embeddings
+File: `author_embeddings.py`
+
+-**Purpose:** Computes vector embeddings for each author using a SentenceTransformer (BERT-based).
+-**Output**:
+ `author_embeddings_agg.npy ` – embeddings for each author
+ `author_names.npy ` – list of author names
+
+### ** 3️⃣ Evaluate Recommendation Methods**
+File: `evaluation_methods.py`
+
+- **Purpose:** Evaluates the performance of all recommendation methods on test papers using:
+  - BERT embeddings
+  - Doc2Vec
+  - Jaccard Similarity
+  - Topic Modeling (NMF)
+  - Optional: Word Mover's Distance (WMD)
+- Computes top-K recommendations for each method.
+- Computes reviewer-reviewer similarity and generates a heatmap (`reviewer_similarity_heatmap.png`).
+
+- We have inlcude it in our app2.py itself so it is not required to run this file
+
+
+
+
+
