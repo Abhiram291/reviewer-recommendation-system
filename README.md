@@ -1,4 +1,4 @@
-<img width="431" height="768" alt="Screenshot 2025-10-26 at 1 07 26 PM" src="https://github.com/user-attachments/assets/b4c7c972-c9ba-4384-90e3-c45e5d0fdb22" /># Reviewer-recommendation-system
+Reviewer-recommendation-system
 A multi-method NLP-based system to recommend reviewers for research papers using BERT, Doc2Vec, Jaccard similarity, and Topic Modeling (NMF).”
 
 
@@ -147,7 +147,13 @@ File: `app2.py`
 
 
 ### Streamlit App Preview
-![Streamlit App]
+
+<img width="431" height="768" alt="Screenshot 2025-10-26 at 1 07 26 PM" src="https://github.com/user-attachments/assets/c49c0e11-ee30-4711-8b0a-601911ada684" />
+<img width="596" height="705" alt="Screenshot 2025-10-26 at 1 07 44 PM" src="https://github.com/user-attachments/assets/1a45929d-17ac-4b2e-bcab-c2962a34380f" />
+<img width="567" height="657" alt="Screenshot 2025-10-26 at 1 07 57 PM" src="https://github.com/user-attachments/assets/4dbeb537-23a8-41c7-82df-31d339e1c1e1" />
+
+
+
 
 
 
