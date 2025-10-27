@@ -77,7 +77,7 @@ File: `app2.py`
 
 - **Purpose:** Streamlit app for uploading a research paper PDF and generating top reviewer recommendations.
 -Upload a PDF in the Streamlit UI to get recommendations.
--The app displays top reviewers and backup reviewers for each method.
+-The app displays top k reviewers with confidence score(c) for each method.
 
 
 
