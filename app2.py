@@ -1,6 +1,3 @@
-# ==========================================
-
-# ==========================================
 
 import streamlit as st
 import fitz  
@@ -200,4 +197,5 @@ if uploaded_file:
 
 else:
     st.info("⬆️ Please upload a PDF to get reviewer recommendations.")
+
 
