@@ -1,9 +1,9 @@
 # ==========================================
-# 🧠 Cross-Document Reviewer Recommendation App with Evaluation
+
 # ==========================================
 
 import streamlit as st
-import fitz  # PyMuPDF
+import fitz  
 import numpy as np
 import json
 import re
@@ -14,18 +14,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
-# ==========================================
-# ⚙️ Config
-# ==========================================
+
+
 EMBEDDINGS_FILE = "author_embeddings_agg.npy"     
 AUTHOR_NAMES_FILE = "author_names.npy"             
 AUTHOR_PROFILES_FILE = "author_profiles.json"      
 TOP_K = 5                                          
 BACKUP_PER_AUTHOR = 2                              
 
-# -----------------------------
-# 🔹 Ground Truth for Test Papers
-# Only include papers whose authors exist in the dataset
+
+
+# Only included papers whose authors exist in the dataset
 GROUND_TRUTH = {
     "2022-Deep_Architectures_for_Image_Compression_A_Critical_Review.pdf": ["Dipthi Mishra"],
     "mBERT based model for identification.pdf": ["Arun Chauhan"],
@@ -33,9 +32,8 @@ GROUND_TRUTH = {
     
 }
 
-# ==========================================
-# 🧩 Helper Functions
-# ==========================================
+
+
 def extract_text_from_pdf(pdf_file):
     doc = fitz.open(stream=pdf_file.read(), filetype="pdf")
     text = ""
@@ -46,9 +44,8 @@ def extract_text_from_pdf(pdf_file):
 def preprocess(text):
     return re.findall(r'\b\w+\b', text.lower())
 
-# ==========================================
-# 🔹 Evaluation Functions
-# ==========================================
+
+
 def top_k_accuracy(preds, gt_authors, k=TOP_K):
     return any(author in gt_authors for author in preds[:k])
 
@@ -62,9 +59,9 @@ def mean_reciprocal_rank(preds, gt_authors):
             return 1 / rank
     return 0
 
-# ==========================================
-# 🧠 Load Data
-# ==========================================
+
+#Load Data
+
 st.write("🔄 Loading author profiles and models...")
 
 with open(AUTHOR_PROFILES_FILE, "r", encoding="utf-8") as f:
@@ -75,9 +72,9 @@ author_embeddings = np.load(EMBEDDINGS_FILE)
 author_embeddings = np.array([normalize(e.reshape(1, -1))[0] for e in author_embeddings])
 reviewer_sim_matrix = cosine_similarity(author_embeddings)
 
-# ==========================================
-# 🧠 Load Models
-# ==========================================
+
+#Load Models
+
 bert_model = SentenceTransformer('all-mpnet-base-v2')
 
 tagged_docs = [TaggedDocument(preprocess(doc), [i]) for i, doc in enumerate(author_texts.values())]
@@ -90,9 +87,9 @@ tfidf = tfidf_vectorizer.fit_transform(list(author_texts.values()))
 nmf_model = NMF(n_components=20, random_state=42)
 nmf_topics = nmf_model.fit_transform(tfidf)
 
-# ==========================================
-# 🔍 Recommendation Methods
-# ==========================================
+
+#Recommendation Methods
+
 def recommend_bert(paper_text, top_k=TOP_K, backup_per_author=BACKUP_PER_AUTHOR):
     paper_emb = bert_model.encode(paper_text, convert_to_numpy=True)
     paper_emb = normalize(paper_emb.reshape(1, -1))[0].reshape(1, -1)
@@ -141,9 +138,9 @@ def recommend_topic(paper_text, top_k=TOP_K):
     top_indices = sims.argsort()[::-1][:top_k]
     return [(author_names[i], float(sims[i])) for i in top_indices]
 
-# ==========================================
-# 🎨 Streamlit UI
-# ==========================================
+
+# Streamlit UI
+
 st.title("🧠 Multi-Method Reviewer Recommendation System with Evaluation")
 st.markdown("Upload a research paper PDF to find the most suitable reviewers using multiple NLP-based approaches.")
 
@@ -201,31 +198,6 @@ if uploaded_file:
         st.dataframe(df)
         st.markdown("This table compares top reviewers across all four methods.")
 
-    # ---------------- Evaluation Metrics Tab ----------------
-    with tabs[5]:
-        file_name = uploaded_file.name
-        if file_name in GROUND_TRUTH:
-            gt_authors = GROUND_TRUTH[file_name]
-            bert_preds = [r['author'] for r in bert_results]
-            doc2vec_preds = [a for a, _ in doc2vec_results]
-            jaccard_preds = [a for a, _ in jaccard_results]
-            topic_preds = [a for a, _ in topic_results]
-
-            metrics = {}
-            for method_name, preds in zip(
-                ["BERT", "Doc2Vec", "Jaccard", "TopicModel"],
-                [bert_preds, doc2vec_preds, jaccard_preds, topic_preds]
-            ):
-                metrics[method_name] = {
-                    "Top-5 Accuracy": top_k_accuracy(preds, gt_authors, k=TOP_K),
-                    "Precision@5": precision_at_k(preds, gt_authors, k=TOP_K),
-                    "MRR": mean_reciprocal_rank(preds, gt_authors)
-                }
-
-            st.subheader("📊 Evaluation Metrics for Uploaded Paper")
-            df_metrics = pd.DataFrame(metrics).T
-            st.dataframe(df_metrics)
-        else:
-            st.info("⚠️ No ground truth available for this uploaded paper. Metrics cannot be computed.")
 else:
     st.info("⬆️ Please upload a PDF to get reviewer recommendations.")
+
