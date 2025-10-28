@@ -1,12 +1,11 @@
 import os
-import fitz  # PyMuPDF
+import fitz  
 import json
 
-# Path to your dataset folder
+
 dataset_path = "/Users/abhiramayla/Downloads/AAFI_assgn2/Dataset"
 
-# Dictionary to hold author profiles
-# Key: author name, Value: concatenated text of all their papers
+
 author_profiles = {}
 
 def extract_text_from_pdf(pdf_path):
@@ -17,7 +16,7 @@ def extract_text_from_pdf(pdf_path):
         text += page.get_text()
     return text
 
-# Iterate over authors
+
 for author in os.listdir(dataset_path):
     author_folder = os.path.join(dataset_path, author)
     if os.path.isdir(author_folder):
@@ -33,11 +32,12 @@ for author in os.listdir(dataset_path):
 
 print(f"Total authors processed: {len(author_profiles)}")
 
-# -----------------------------
+
 # Save author_profiles to JSON
-# -----------------------------
+
 output_json = "author_profiles.json"
 with open(output_json, "w", encoding="utf-8") as f:
     json.dump(author_profiles, f, ensure_ascii=False, indent=2)
 
 print(f"Saved author profiles to {output_json}")
+
