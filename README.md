@@ -42,7 +42,6 @@ File: `read_pdf.py`
 - **Purpose:** Reads all PDF papers in the dataset and extracts text for each author.  
 - **Output:** `author_profiles.json` – a JSON file containing concatenated text for each author.  
 
-##Run the file ###2
 
 --------------------------------------------------------------------------
 
