@@ -16,7 +16,7 @@ A multi-method NLP-based system to recommend reviewers for research papers using
 
 The dataset contains **author profiles** and their research papers in PDF format. It is used to train and evaluate the reviewer recommendation system.
 
-### **Structure**
+### Structure
 
 Dataset/
 │
@@ -36,7 +36,7 @@ The project consists of multiple Python scripts, each with a specific purpose. F
 
 ---
 
-### **1️⃣ Extract Author Texts from PDFs**
+### 1) Extract Author Texts from PDFs
 File: `read_pdf.py`
 
 - **Purpose:** Reads all PDF papers in the dataset and extracts text for each author.  
@@ -46,7 +46,7 @@ File: `read_pdf.py`
 
 --------------------------------------------------------------------------
 
-### ** 2️⃣ Generate Author Embeddings
+### 2) Generate Author Embeddings
 File: `author_embeddings.py`
 
 -**Purpose:** Computes vector embeddings for each author using a SentenceTransformer (BERT-based).
@@ -56,7 +56,7 @@ File: `author_embeddings.py`
 
 ----------------------------------------------------------------------------
 
-### ** 3️⃣ Evaluate Recommendation Methods**
+### 3) Evaluate Recommendation Methods
 File: `evaluation_methods.py`
 
 - **Purpose:** Evaluates the performance of all recommendation methods on test papers using:
@@ -72,7 +72,7 @@ File: `evaluation_methods.py`
 
 ----------------------------------------------------------------------------
 
-  ## ** 4️⃣ Run the Reviewer Recommendation App**
+  ## 4) Run the Reviewer Recommendation App
 File: `app2.py`
 
 - **Purpose:** Streamlit app for uploading a research paper PDF and generating top reviewer recommendations.
